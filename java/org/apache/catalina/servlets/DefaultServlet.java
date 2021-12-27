@@ -134,7 +134,7 @@ import org.xml.sax.ext.EntityResolver2;
  * @author Craig R. McClanahan
  * @author Remy Maucherat
  */
-public class DefaultServlet extends HttpServlet {
+public class DefaultServlet extends HttpServlet { // <bj>Is this the only servlet implementation?</bj>
 
     private static final long serialVersionUID = 1L;
 
@@ -174,7 +174,7 @@ public class DefaultServlet extends HttpServlet {
 
     // ----------------------------------------------------- Static Initializer
 
-    static {
+    static { // <bj>I'm not sure if static initializer is an ugly part of JAVA.</bj>
         if (Globals.IS_SECURITY_ENABLED) {
             factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
@@ -260,7 +260,7 @@ public class DefaultServlet extends HttpServlet {
     /**
      * Minimum size for sendfile usage in bytes.
      */
-    protected int sendfileSize = 48 * 1024;
+    protected int sendfileSize = 48 * 1024; // <bj>sendfile - For IO optimization</bj>
 
     /**
      * Should the Accept-Ranges: bytes header be send with static resources?
@@ -270,7 +270,7 @@ public class DefaultServlet extends HttpServlet {
     /**
      * Flag to determine if server information is presented.
      */
-    protected boolean showServerInfo = true;
+    protected boolean showServerInfo = true; // <bj>How to disable it in configuration?</bj>
 
     /**
      * Flag to determine if resources should be sorted.

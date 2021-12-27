@@ -38,11 +38,11 @@ import java.util.Enumeration;
  * <code>service</code> method.
  */
 public abstract class GenericServlet implements Servlet, ServletConfig,
-        java.io.Serializable {
+        java.io.Serializable { // <bj>Which classes are derived from it?</bj>
 
     private static final long serialVersionUID = 1L;
 
-    private transient ServletConfig config;
+    private transient ServletConfig config; // <bj>keyword transient</bj>
 
     /**
      * Does nothing. All of the servlet initialization is done by one of the
